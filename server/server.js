@@ -12,7 +12,7 @@ Connectdb(db)
 .then(()=>{
     console.log('Database Successfully Connected')
     app.listen('8080', ()=>{
-        console.log('Application Started Successfully in Port 8080 !!!')
+        console.log('Application Started Successfully in Port 8080!!!')
     })
 })
 .catch((error)=>{

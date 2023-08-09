@@ -18,14 +18,12 @@ Router.get('/airline-booking/:ticketId', AirlineBookingCont.getBookingByTicketId
 Router.get('/airline-booking/:id', AirlineBookingCont.getBookingById)
 
 // Tickets
-
 Router.post('/ticket/:adminId', TicketController.createTicket)
 Router.get('/ticket/:ticketId', TicketController.getTicketById)
 Router.get('/ticket/admin/:adminId', TicketController.getAllTicket)
 Router.put('/ticket/admin/:adminId', TicketController.updateTicket)
 
 // User
-
 Router.post('/user', UserController.createUser)
 Router.get('/user/:email', UserController.getUserByEmail)
 Router.get('/user/userId/:userId', UserController.getUserById)

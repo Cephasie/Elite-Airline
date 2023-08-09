@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import {loginUrl} from '../../api/Api';
 import axios from 'axios';
-import {Link, useNavigate} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { TextField } from '@mui/material';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -42,15 +44,15 @@ const Login = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="">
-            email:
-            <input
-              value={data.email}
-              name="email"
-              onChange={handleChange}
-              type="email"
-            />
-          </label>
+          <TextField>
+            value = {data.email}
+            name = "email"
+            onchange = {handleChange}
+            type = "email"
+            id = "email"
+            label = "Email"
+            variant = "outlined"
+          <TextField/>
         </div>
         <div>
           <label htmlFor="">
