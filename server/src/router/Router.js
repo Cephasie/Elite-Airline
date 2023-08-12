@@ -13,7 +13,10 @@ Router.post('/auth/register-admin', AuthController.registerAdmin)
 Router.post('/auth/forgot-password/:email', AuthController.forgotPassword)
 
 // Airline Enquiry
-Router.post('/airline')
+Router.post('/airline-enquiry', AirlineEnquiryController.createAirlineEnquiry)
+Router.get('/airline-enquiry/:enquiryId', AirlineEnquiryController.findEnquiryById)
+Router.get('/airline-enquiry', AirlineEnquiryController.getAllEnquiry)
+Router.delete('/airline-enquiry/:enqiuryId', AirlineEnquiryController.deleteEnquiryById)
 
 // Airline Bookings
 Router.post('/airline-booking', AirlineBookingCont.createBooking)

@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {registerUrl} from '../../api/Api';
 import axios from 'axios';
-import {TextField, Box, Button} from '@mui/material';
 
 const SignUp = () => {
   const initialValue = {

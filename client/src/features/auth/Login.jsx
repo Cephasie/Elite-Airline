@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
 import {loginUrl} from '../../api/Api';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
-
-import { TextField } from '@mui/material';
+import {useNavigate} from 'react-router-dom';
+import {TextField, Box} from '@mui/material'
 
 const Login = () => {
   const navigate = useNavigate();
@@ -42,17 +41,27 @@ const Login = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      {/* {ReactDOM.createPortal()} */}
+      <Box component="form" onSubmit={handleSubmit}>
         <div>
-          <TextField>
-            value = {data.email}
-            name = "email"
-            onchange = {handleChange}
-            type = "email"
-            id = "email"
-            label = "Email"
-            variant = "outlined"
-          <TextField/>
+          {/* <label htmlFor="">
+            email:
+            <input
+              value={data.email}
+              name="email"
+              onChange={handleChange}
+              type="email"
+            />
+          </label> */}
+          <TextField sx={{marginTop: '20px'}}
+            value={data.email}
+            name="email"
+            onChange={handleChange}
+            type="email"
+            label='Email'
+            id='email'
+            variant='outlined'
+          />
         </div>
         <div>
           <label htmlFor="">
@@ -66,8 +75,9 @@ const Login = () => {
           </label>
         </div>
         <div>
-          <button type="submit">Submit</button></div>
-      </form>
+          <button type="submit">Submit</button>
+        </div>
+      </Box>
       <p onClick={handleNavigate}>Forgot Password</p>
     </div>
   );

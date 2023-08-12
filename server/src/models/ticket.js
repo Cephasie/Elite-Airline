@@ -15,10 +15,10 @@ const ticketSchema = new Schema({
     destination: {
         type: String
     },
-    date: {
+    departureDate: {
         type: String
     },
-    time: {
+    returnDate: {
         type: String
     },
 }, 

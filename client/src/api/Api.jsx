@@ -1,10 +1,16 @@
-const baseUrl = 'http://localhost:8080/api/v1/elite'
+const baseUrl = 'http://localhost:8081/api/v1/elite'
 
 // Auth /auth/register-admin
 export const loginUrl = `${baseUrl}/auth/login`
 export const registerAdminUrl = `${baseUrl}/auth/register-admin`
 export const registerUrl = `${baseUrl}/auth/register`
 export const forgotPassUrl = (email) => `${baseUrl}/auth/forgot-password/${email}`
+
+// Airline Enquiry
+export const createAirlineEnquiryUrl = `${baseUrl}/airline-enquiry`
+export const findEnquiryByIdUrl = (enquiryId) =>`${baseUrl}/airline-enquiry/${enquiryId}`
+export const getAllEnquiry = `${baseUrl}/airline-enquiry`
+export const deleteEnquiryByIdUrl = (enquiryId) =>`${baseUrl}/airline-enquiry/${enquiryId}`
 
 // Airline Bookings
 export const createAirlineBooksUrl = `${baseUrl}/airline-booking`

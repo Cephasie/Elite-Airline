@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+3/* eslint-disable no-undef */
 const { NotFoundException } = require('../exceptions/NotFoundException');
 const Ticket = require('../models/ticket');
 const User = require('../models/user')
@@ -16,7 +16,7 @@ const createTicket = async (request, adminId)=> {
     //     throw new NotFoundException('Admin not found')
     // }
 
-    const { destination, from, description, date, time } = request;
+    const { destination, from, description, departmentDate, returnDate } = request;
     console.log('ticket 2 --> ', request)
 
     const ticket = new Ticket({
@@ -85,10 +85,10 @@ const updateTicket = async (request, adminId) => {
         throw new NotFoundException('Admin not found')
     }
 
-    const { _id, destination, description, date, time } = request
+    const { _id, destination, description, departmentDate, returnDate } = request
     const ticket = await Ticket.findOne({_id})
     if(ticket) {
-        const updateTicket = await Ticket.updateOne({_id: _id}, { destination: destination, description: description, date: date, time: time }, {new: true} )
+        const updateTicket = await Ticket.updateOne({_id: _id}, { destination: destination, description: description, date: departmentDate, time: returnDate }, {new: true} )
 
         return{
             data: updateTicket,
